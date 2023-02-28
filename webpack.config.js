@@ -3,10 +3,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
-  entry: './assets/js/canvas.js',
+  entry: {
+    main: './assets/js/main.js',
+    mario: './assets/js/mario.js',
+    spaceInvaders: './assets/js/spaceInvaders.js',
+  },
   output: {
     path: __dirname + '/dist/',
-    filename: './js/canvas.bundle.js'
+    filename: './js/[name].bundle.js',
   },
   module: {
     rules: [
@@ -16,19 +20,19 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
-            loader: 'file-loader'
-          }
-        ]
-      }
-    ]
+            loader: 'file-loader',
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new BrowserSyncPlugin({
@@ -36,14 +40,27 @@ module.exports = {
       port: 3000,
       server: { baseDir: ['dist'] },
       files: ['./dist/*'],
-      notify: false
+      notify: false,
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       favicon: 'favicon.ico',
-      template: 'src/index.html'
-    })
+      template: 'src/index.html',
+      chunks: ['main'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'mario-game.html',
+      favicon: 'favicon.ico',
+      template: 'src/mario-game.html',
+      chunks: ['mario'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'space-invaders.html',
+      favicon: 'favicon.ico',
+      template: 'src/space-invaders.html',
+      chunks: ['spaceInvaders'],
+    }),
   ],
   watch: true,
-  devtool: 'source-map'
+  devtool: 'source-map',
 }
