@@ -7,6 +7,7 @@ module.exports = {
     main: './assets/js/main.js',
     mario: './assets/js/mario.js',
     spaceInvaders: './assets/js/spaceInvaders.js',
+    pacman: './assets/js/pacman.js',
   },
   output: {
     path: __dirname + '/dist/',
@@ -59,6 +60,12 @@ module.exports = {
       favicon: 'favicon.ico',
       template: 'src/space-invaders.html',
       chunks: ['spaceInvaders'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'pacman.html',
+      favicon: 'favicon.ico',
+      template: 'src/pacman.html',
+      chunks: ['pacman'],
     }),
   ],
   watch: true,
