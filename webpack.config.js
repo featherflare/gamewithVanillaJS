@@ -9,6 +9,7 @@ module.exports = {
     spaceInvaders: './assets/js/spaceInvaders.js',
     pacman: './assets/js/pacman.js',
     pokemon: './assets/js/pokemon.js',
+    fighting: './assets/js/fighting.js',
   },
   output: {
     path: __dirname + '/dist/',
@@ -73,6 +74,12 @@ module.exports = {
       favicon: 'favicon.ico',
       template: 'src/pokemon.html',
       chunks: ['pokemon'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'fighting-game.html',
+      favicon: 'favicon.ico',
+      template: 'src/fighting-game.html',
+      chunks: ['fighting'],
     }),
   ],
   watch: true,
