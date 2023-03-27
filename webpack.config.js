@@ -10,6 +10,7 @@ module.exports = {
     pacman: './assets/js/pacman.js',
     pokemon: './assets/js/pokemon.js',
     fighting: './assets/js/fighting.js',
+    towerDefense: './assets/js/tower-defense.js',
   },
   output: {
     path: __dirname + '/dist/',
@@ -80,6 +81,12 @@ module.exports = {
       favicon: 'favicon.ico',
       template: 'src/fighting-game.html',
       chunks: ['fighting'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'tower-defense.html',
+      favicon: 'favicon.ico',
+      template: 'src/tower-defense.html',
+      chunks: ['towerDefense'],
     }),
   ],
   watch: true,
