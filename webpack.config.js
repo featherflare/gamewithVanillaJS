@@ -12,6 +12,7 @@ module.exports = {
     fighting: './assets/js/fighting.js',
     towerDefense: './assets/js/tower-defense.js',
     pong: './assets/js/pong.js',
+    multiroom: './assets/js/multiroom.js',
   },
   output: {
     path: __dirname + '/dist/',
@@ -94,6 +95,12 @@ module.exports = {
       favicon: 'favicon.ico',
       template: 'src/pong.html',
       chunks: ['pong'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'multiroom.html',
+      favicon: 'favicon.ico',
+      template: 'src/multiroom.html',
+      chunks: ['multiroom'],
     }),
   ],
   watch: true,
