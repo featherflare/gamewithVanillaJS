@@ -11,6 +11,7 @@ module.exports = {
     pokemon: './assets/js/pokemon.js',
     fighting: './assets/js/fighting.js',
     towerDefense: './assets/js/tower-defense.js',
+    pong: './assets/js/pong.js',
   },
   output: {
     path: __dirname + '/dist/',
@@ -87,6 +88,12 @@ module.exports = {
       favicon: 'favicon.ico',
       template: 'src/tower-defense.html',
       chunks: ['towerDefense'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'pong.html',
+      favicon: 'favicon.ico',
+      template: 'src/pong.html',
+      chunks: ['pong'],
     }),
   ],
   watch: true,
