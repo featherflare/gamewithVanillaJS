@@ -13,6 +13,7 @@ module.exports = {
     towerDefense: './assets/js/tower-defense.js',
     pong: './assets/js/pong.js',
     multiroom: './assets/js/multiroom.js',
+    verticalPlatform: './assets/js/verticalPlatform.js',
   },
   output: {
     path: __dirname + '/dist/',
@@ -101,6 +102,12 @@ module.exports = {
       favicon: 'favicon.ico',
       template: 'src/multiroom.html',
       chunks: ['multiroom'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'verticalPlatform.html',
+      favicon: 'favicon.ico',
+      template: 'src/verticalPlatform.html',
+      chunks: ['verticalPlatform'],
     }),
   ],
   watch: true,
