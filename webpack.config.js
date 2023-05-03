@@ -14,6 +14,7 @@ module.exports = {
     pong: './assets/js/pong.js',
     multiroom: './assets/js/multiroom.js',
     verticalPlatform: './assets/js/verticalPlatform.js',
+    threeJsGame: './assets/js/threeJs-game.js',
   },
   output: {
     path: __dirname + '/dist/',
@@ -108,6 +109,12 @@ module.exports = {
       favicon: 'favicon.ico',
       template: 'src/verticalPlatform.html',
       chunks: ['verticalPlatform'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'threeJs-game.html',
+      favicon: 'favicon.ico',
+      template: 'src/threeJs-game.html',
+      chunks: ['threeJsGame'],
     }),
   ],
   watch: true,
